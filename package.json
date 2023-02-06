@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./https/query/request.test.js",
     "start": "node ./app.js"
   },
   "keywords": [],
