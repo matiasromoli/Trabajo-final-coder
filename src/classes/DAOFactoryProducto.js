@@ -1,6 +1,6 @@
-import { ProductosDaoMemoria } from "../daos/producto/productoDaoMemoria.js";
-import { ProductosDaoArchivo } from "../daos/producto/productoDaoArchivo.js";
-import ProductosDaoMongoDb from "../daos/producto/productoDaoMongo.js";
+import { ProductosDaoMemoria } from "../daos/producto/ProductoDaoMemoria.js";
+import { ProductosDaoArchivo } from "../daos/producto/ProductoDaoArchivo.js";
+import ProductosDaoMongoDb from "../daos/producto/ProductoDaoMongo.js";
 import { config } from "../../config/config.js";
 
 export class DaoFactoryProducto {
