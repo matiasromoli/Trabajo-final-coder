@@ -24,7 +24,7 @@ const mensajeDivSupport = (msj) => {
   return div;
 };
 export const nuevoMensaje = (data) => {
-  content.append(noteUI(data));
+  content.append(mensajeDiv(data));
 };
 export const mostrarMensaje = (data) => {
   data.forEach((msj) => {
