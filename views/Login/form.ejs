@@ -1,0 +1,28 @@
+<form class="login" method="POST" action="/login">
+  <div class="data">
+    <h2>Iniciar sesión</h2>
+  </div>
+  <div class="inputs-login">
+    <% if(message) { %>
+    <p><%- message %></p>
+    <% } %>
+    <input
+      type="email"
+      name="email"
+      class="input"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su correo."
+    />
+    <input
+      class="input"
+      type="password"
+      name="password"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su contraseña."
+    />
+    <input class="btn" type="submit" value="Ingresar" autocomplete="off" />
+    <div class="paragraph">
+      <p>¿No estás registrado? <a href="/register"> Registrate </a></p>
+    </div>
+  </div>
+</form>

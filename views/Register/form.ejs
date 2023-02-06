@@ -1,0 +1,62 @@
+<div class="data-register">
+  <h2>Registrate</h2>
+  <p>¡Sumate a nuestra tienda virtual!</p>
+</div>
+<form
+  class="register"
+  method="POST"
+  action="/register"
+  enctype="multipart/form-data"
+>
+  <div class="inputs-register">
+    <% if(message) { %>
+    <p><%- message %></p>
+    <% } %>
+    <input
+      type="text"
+      name="nombre"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su usuario."
+    />
+    <input
+      name="password"
+      type="password"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su contraseña."
+    />
+    <input
+      name="pass"
+      type="password"
+      autocomplete="off"
+      placeholder="Por favor, repita su contraseña."
+    />
+    <input
+      type="email"
+      name="email"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su correo."
+    />
+    <input
+      type="text"
+      name="address"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su dirección."
+    />
+    <input
+      type="tel"
+      name="phone"
+      autocomplete="off"
+      placeholder="Por favor, ingrese su télefono."
+    />
+  </div>
+  <div class="inputs-two">
+    <div class="label">
+      <label> Seleccione su avatar </label>
+      <input type="file" name="image" />
+    </div>
+    <input class="btn" type="submit" value="Registrarse" autocomplete="off" />
+    <div class="paragraph">
+      <p>¿Ya estás registrado? <a href="/"> Login </a></p>
+    </div>
+  </div>
+</form>

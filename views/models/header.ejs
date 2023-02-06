@@ -1,0 +1,18 @@
+<header>
+  <img loading="lazy" src="/image/<%- user.image %>" />
+  <p><%- user.name %></p>
+  <ul>
+    <li>
+      <a href="/profile"> Inicio </a>
+    </li>
+    <li>
+      <a href="/chat"> Chat </a>
+    </li>
+    <li>
+      <% carrito.forEach(function (c) { %>
+      <a href="/carrito/<%- c.id %>"> Carrito </a>
+      <% }) %>
+    </li>
+    <li><a href="/logout"> Logout </a></li>
+  </ul>
+</header>

@@ -1,0 +1,25 @@
+<% if(producto.length) { %> <% producto.forEach(function (p) { %>
+<div class="producto">
+  <img loading="lazy" src="<%- p.foto %>" />
+  <div class="text-content">
+    <p class="producto-text"><%= p.nombre %></p>
+    <p class="producto-text">Precio: $<%= p.precio %></p>
+  </div>
+  <% carrito.forEach(function (c) { %>
+  <form
+    class="btn-producto"
+    method="POST"
+    action="http://localhost:8080/api/carrito/<%- c.id %>/productos"
+  >
+    <% }) %>
+    <input type="hidden" name="id" value="<%- p.id %>" />
+    <input class="btn" type="submit" value="Agregar carrito" />
+  </form>
+</div>
+<% }) %> <% } else { %>
+<div class="not-data">
+  <div class="data-upload">
+    <p>No existen productos</p>
+  </div>
+</div>
+<% } %>

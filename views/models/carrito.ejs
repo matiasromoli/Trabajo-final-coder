@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <meta charset="UTF-8" />
+    <title>Carrito de compras</title>
+  </head>
+
+  <body>
+    <%- include ("./header.ejs") %>
+    <section class="section-carrito">
+      <% if(productoCarrito.length) { %>
+      <form
+        class="form-carrito"
+        method="POST"
+        action="/carrito/<%- ident %>/buy"
+      >
+        <% productoCarrito.forEach(function (p) { %>
+        <div class="carrito-body">
+          <img loading="lazy" src="<%- p.foto %>" />
+          <h2><%- p.nombre %></h2>
+          <p>Precio: <%- p.precio %></p>
+          <p>Cantidad: <%- p.cantidad %></p>
+        </div>
+        <input type="hidden" name="nombre" value="<%- p.nombre %>" />
+        <input type="hidden" name="precio" value="<%- p.precio %>" />
+        <input type="hidden" name="codigo" value="<%- p.codigo %>" />
+        <input type="hidden" name="cantidad" value="<%- p.cantidad %>" />
+        <% }) %>
+        <div class="b-carrito">
+          <input class="btn-carrito" type="submit" value="Comprar" />
+        </div>
+      </form>
+      <% } else { %>
+      <div class="not-data">
+        <div class="data-upload">
+          <p>El carrito está vacio.</p>
+          <a href="/profile"> ¡Agregar productos! </a>
+        </div>
+      </div>
+      <% } %>
+    </section>
+  </body>
+</html>

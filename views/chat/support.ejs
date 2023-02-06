@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <meta charset="UTF-8" />
+    <title><%- title %></title>
+  </head>
+  <body>
+    <section class="support-chat">
+      <div class="support">
+        <h2>Support</h2>
+      </div>
+      <div class="support-content">
+        <div class="lista-mensajes">
+          <% data.forEach(function (message) { %>
+          <div class="message">
+            <p><%= message.email %>:</p>
+            <p><%= message.mensaje %></p>
+          </div>
+          <% }) %>
+        </div>
+        <form class="support-form" id="formulario">
+          <input type="email" placeholder="email" name="email" id="email" />
+          <input
+            type="text"
+            placeholder="mensaje"
+            name="mensaje"
+            id="message"
+          />
+          <input class="btn" type="submit" value="Enviar" />
+        </form>
+      </div>
+    </section>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/support.js" type="module"></script>
+</html>
