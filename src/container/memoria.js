@@ -1,4 +1,4 @@
-import { producto } from "../daos/producto/productoDaoMemoria.js";
+import { producto } from "../daos/producto/ProductoDaoMemoria.js";
 
 export class MemoriaProducto {
   constructor(producto) {
